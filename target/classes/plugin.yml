@@ -1,0 +1,4 @@
+name: CustomEnchant
+version: 1.0.0
+main: org.geminicraft.customenchant.MainPlugin
+api-version: 1.15
