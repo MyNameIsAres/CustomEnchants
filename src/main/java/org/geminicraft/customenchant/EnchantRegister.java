@@ -1,6 +1,9 @@
 package org.geminicraft.customenchant;
 
+
 import lombok.Getter;
+
+import org.geminicraft.customenchant.enchants.impl.ThunderStrikeEnchant;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.Valid;
 import org.mineacademy.fo.collection.StrictList;
@@ -14,7 +17,8 @@ public final class EnchantRegister {
 
 
     private EnchantRegister() {
-    // TODO add custom enchants
+        add((SimpleEnchantment) ThunderStrikeEnchant.getInstance());
+
     }
 
     public void add(SimpleEnchantment enchantment) {
@@ -28,13 +32,13 @@ public final class EnchantRegister {
         for (SimpleEnchantment enchantment : simpleEnchantments) {
             Common.log("I am the getName method " + enchantment.getName());
             if (enchantment.getName().equals(name)) {
-
-
-
                 Common.log("Enchantment register returned the enchantment");
 
                 return enchantment;
             }
+
+            Common.log(enchantment.getName() + " I am the getname function again");
+            Common.log(name + " I am the name");
 
             Common.log("Escaping loop");
         }
