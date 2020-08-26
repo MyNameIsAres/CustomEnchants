@@ -12,7 +12,7 @@ import org.mineacademy.fo.model.SimpleEnchantment;
 public class CustomEnchantmentCommand extends SimpleCommand {
 
     public CustomEnchantmentCommand() {
-        super("gemenchant|ge");
+        super("cemenchant|ce");
         setUsage("/ge <enchantment>");
     }
 
@@ -21,9 +21,11 @@ public class CustomEnchantmentCommand extends SimpleCommand {
         final Player player = getPlayer();
 
         final String param = args[0].toLowerCase();
+        final String enchantName = Common.joinRange(0, args);
         Common.log("This is param 1 " + param);
         final EnchantRegister enchantRegister = EnchantRegister.getInstance();
-        final SimpleEnchantment enchantment = enchantRegister.findEnchantment(param);
+        final SimpleEnchantment enchantment = enchantRegister.findEnchantment(enchantName);
+        Common.log(enchantment.toString() + " test");
 
 
         ItemStack testItem = player.getInventory().getItemInMainHand();
@@ -37,8 +39,6 @@ public class CustomEnchantmentCommand extends SimpleCommand {
         // TODO Consider creating flags for items
 
         tell("&6You were given items with custom enchantments");
-
-
 
 
     }
