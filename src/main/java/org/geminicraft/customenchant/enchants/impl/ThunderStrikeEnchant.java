@@ -19,9 +19,11 @@ public class ThunderStrikeEnchant extends SimpleEnchantment {
 
     private ThunderStrikeEnchant() {
         super("Thunder Strike", 3);
+        
     }
 
     protected boolean thunderCharged = false;
+
 
     @Override
     protected void onDamage(int level, LivingEntity damager, EntityDamageByEntityEvent event) {

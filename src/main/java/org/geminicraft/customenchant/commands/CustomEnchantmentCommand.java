@@ -20,12 +20,12 @@ public class CustomEnchantmentCommand extends SimpleCommand {
     protected void onCommand() {
         final Player player = getPlayer();
 
-        final String param = args[0].toLowerCase();
+        final String param = args[1].toLowerCase();
         final String enchantName = Common.joinRange(0, args);
         Common.log("This is param 1 " + param);
         final EnchantRegister enchantRegister = EnchantRegister.getInstance();
         final SimpleEnchantment enchantment = enchantRegister.findEnchantment(enchantName);
-        Common.log(enchantment.toString() + " test");
+        Common.log(enchantment.toString() + " I am the enchantment test!");
 
 
         ItemStack testItem = player.getInventory().getItemInMainHand();
