@@ -18,7 +18,7 @@ public class ThunderStrikeEnchant extends SimpleEnchantment {
     private static final Enchantment instance = new ThunderStrikeEnchant();
 
     private ThunderStrikeEnchant() {
-        super("Thunder Strike", 3);
+        super("custom", 3);
         
     }
 

@@ -14,7 +14,7 @@ import org.mineacademy.fo.Common;
 import org.mineacademy.fo.model.SimpleEnchantment;
 
 
-public class ChildYeetEnchantment extends SimpleEnchantment implements Listener {
+public class ChildYeetEnchantment extends SimpleEnchantment {
 
     @Getter
     private static final Enchantment instance = new ChildYeetEnchantment();
@@ -22,6 +22,8 @@ public class ChildYeetEnchantment extends SimpleEnchantment implements Listener 
     private ChildYeetEnchantment() {
         super("Child Yeet", 5);
     }
+
+
 
 
     @Override

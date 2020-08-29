@@ -10,6 +10,8 @@ import org.mineacademy.fo.Valid;
 import org.mineacademy.fo.collection.StrictList;
 import org.mineacademy.fo.model.SimpleEnchantment;
 
+import java.util.List;
+
 public final class EnchantRegister {
     @Getter
     private static final EnchantRegister instance = new EnchantRegister();
@@ -51,5 +53,9 @@ public final class EnchantRegister {
         Common.log(ThunderStrikeEnchant.getInstance().getName());
         return null;
 
+    }
+
+    public List<String> getEnchantmentNames() {
+        return Common.convert(simpleEnchantments, SimpleEnchantment::getName);
     }
 }
