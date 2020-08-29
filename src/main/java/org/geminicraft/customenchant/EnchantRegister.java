@@ -3,11 +3,14 @@ package org.geminicraft.customenchant;
 
 import lombok.Getter;
 
+import org.geminicraft.customenchant.enchants.impl.ChildYeetEnchantment;
 import org.geminicraft.customenchant.enchants.impl.ThunderStrikeEnchant;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.Valid;
 import org.mineacademy.fo.collection.StrictList;
 import org.mineacademy.fo.model.SimpleEnchantment;
+
+import java.util.List;
 
 public final class EnchantRegister {
     @Getter
@@ -18,6 +21,7 @@ public final class EnchantRegister {
 
     private EnchantRegister() {
         add((SimpleEnchantment) ThunderStrikeEnchant.getInstance());
+        add((SimpleEnchantment) ChildYeetEnchantment.getInstance());
 
     }
 
@@ -31,7 +35,7 @@ public final class EnchantRegister {
 
         for (SimpleEnchantment enchantment : simpleEnchantments) {
             Common.log("I am the getName method " + enchantment.getName());
-            if (enchantment.getName().equals(name)) {
+            if (enchantment.getName().toLowerCase().equals(name.toLowerCase())) {
                 Common.log("Enchantment register returned the enchantment");
 
                 return enchantment;
@@ -44,9 +48,14 @@ public final class EnchantRegister {
         }
 
 
-
         Common.log("Enchantment register returned null");
+        Common.log(name);
+        Common.log(ThunderStrikeEnchant.getInstance().getName());
         return null;
 
+    }
+
+    public List<String> getEnchantmentNames() {
+        return Common.convert(simpleEnchantments, SimpleEnchantment::getName);
     }
 }

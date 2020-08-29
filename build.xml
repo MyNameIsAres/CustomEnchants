@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<project name="Crux" default="Build">
+<project name="CustomEnchant" default="Build">
 
     <!--
         To make it easier to develop on multiple computers, I included three paths to
@@ -9,18 +9,19 @@
      -->
 
     <!-- Your MC test server location for Windows -->
-    <condition property="serverPath" value="C:\Users\Ares\Desktop\geminiserver">
-        <os family="windows" />
+    <!--  For switching between servers C:\Users\Ares\Documents\newgeminitest  && "C:\Users\Ares\Desktop\geminiserver  -->
+    <condition property="serverPath" value="C:\Users\Ares\Documents\newgeminitest">
+        <os family="windows"/>
     </condition>
 
     <!-- Your MC test server location for Linux -->
     <condition property="serverPath" value="\Users\kangarko\Desktop\Minecraft Server">
-        <os family="unix" />
+        <os family="unix"/>
     </condition>
 
     <!-- Your MC test server location for macOS -->
     <condition property="serverPath" value="\Users\kangarko\Desktop\Minecraft Server">
-        <os family="mac" />
+        <os family="mac"/>
     </condition>
 
     <!-- Ninja: Read your pom.xml file to find the Foundation version we will be using -->
