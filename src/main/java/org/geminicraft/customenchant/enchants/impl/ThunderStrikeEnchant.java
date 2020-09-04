@@ -3,14 +3,16 @@ package org.geminicraft.customenchant.enchants.impl;
 import lombok.Getter;
 import org.bukkit.GameMode;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.enchantments.EnchantmentTarget;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.entity.EntityDamageByBlockEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.jetbrains.annotations.NotNull;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.model.SimpleEnchantment;
+
 
 public class ThunderStrikeEnchant extends SimpleEnchantment {
 
@@ -18,12 +20,16 @@ public class ThunderStrikeEnchant extends SimpleEnchantment {
     private static final Enchantment instance = new ThunderStrikeEnchant();
 
     private ThunderStrikeEnchant() {
-        super("custom", 3);
-        
+        super("Thunder Strike", 3);
     }
 
     protected boolean thunderCharged = false;
 
+
+    @Override
+    public @NotNull EnchantmentTarget getItemTarget() {
+        return EnchantmentTarget.ARMOR;
+    }
 
     @Override
     protected void onDamage(int level, LivingEntity damager, EntityDamageByEntityEvent event) {
@@ -43,15 +49,7 @@ public class ThunderStrikeEnchant extends SimpleEnchantment {
             }
         }
 
-
-
-
     }
-
-    // TODO Play around with this later.
-//    protected void onActivateAbility(int level, PlayerInteractEvent playerInteractEvent, EntityDamageByEntityEvent entityDamageByEntityEvent) {
-//        Common.log("Hey, I am working too!");
-//    }
 
     // TODO Implement cool-down
     @Override

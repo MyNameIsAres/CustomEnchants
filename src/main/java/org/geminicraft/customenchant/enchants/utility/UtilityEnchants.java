@@ -8,9 +8,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.model.SimpleEnchantment;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class UtilityEnchants {
     // Copied method from SimpleEnchantments class

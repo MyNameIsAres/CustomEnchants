@@ -1,9 +1,10 @@
-package org.geminicraft.customenchant;
+package org.geminicraft.customenchant.enchants;
 
 
 import lombok.Getter;
 
 import org.geminicraft.customenchant.enchants.impl.ChildYeetEnchantment;
+import org.geminicraft.customenchant.enchants.impl.SummonEnchant;
 import org.geminicraft.customenchant.enchants.impl.ThunderStrikeEnchant;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.Valid;
@@ -22,7 +23,7 @@ public final class EnchantRegister {
     private EnchantRegister() {
         add((SimpleEnchantment) ThunderStrikeEnchant.getInstance());
         add((SimpleEnchantment) ChildYeetEnchantment.getInstance());
-
+        add((SimpleEnchantment) SummonEnchant.getInstance());
     }
 
     public void add(SimpleEnchantment enchantment) {
@@ -31,26 +32,17 @@ public final class EnchantRegister {
 
     public SimpleEnchantment findEnchantment(String name) {
         Valid.checkNotNull(name);
-        Common.log("I am name in findEnchantment " + name);
 
         for (SimpleEnchantment enchantment : simpleEnchantments) {
-            Common.log("I am the getName method " + enchantment.getName());
             if (enchantment.getName().toLowerCase().equals(name.toLowerCase())) {
-                Common.log("Enchantment register returned the enchantment");
-
                 return enchantment;
             }
 
-            Common.log(enchantment.getName() + " I am the getname function again");
-            Common.log(name + " I am the name");
 
-            Common.log("Escaping loop");
         }
 
+        Common.log(name + " I am a test name in EnchantRegister");
 
-        Common.log("Enchantment register returned null");
-        Common.log(name);
-        Common.log(ThunderStrikeEnchant.getInstance().getName());
         return null;
 
     }
