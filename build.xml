@@ -9,8 +9,8 @@
      -->
 
     <!-- Your MC test server location for Windows -->
-    <!--  For switching between servers C:\Users\Ares\Documents\newgeminitest  && "C:\Users\Ares\Desktop\geminiserver  -->
-    <condition property="serverPath" value="C:\Users\Ares\Documents\newgeminitest">
+    <!--  value="your\file\path">  -->
+    <condition property="serverPath" value="">
         <os family="windows"/>
     </condition>
 
