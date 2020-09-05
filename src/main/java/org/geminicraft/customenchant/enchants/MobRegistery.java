@@ -1,8 +1,11 @@
 package org.geminicraft.customenchant.enchants;
 
 import lombok.Getter;
+import org.bukkit.Location;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
+import org.mineacademy.fo.Common;
 import org.mineacademy.fo.collection.StrictList;
 
 import java.util.Collections;
@@ -19,6 +22,7 @@ public class MobRegistery {
     private MobRegistery() {
         addMob(EntityType.ZOMBIE);
         addMob(EntityType.SKELETON);
+        addMob(EntityType.COW);
     }
 
     //
@@ -30,5 +34,13 @@ public class MobRegistery {
 
     public final List<EntityType> getEntities() {
         return Collections.unmodifiableList(spawnableMobs.getSource());
+    }
+
+    public StrictList<EntityType> getSpawnableMobs() {
+        return spawnableMobs;
+    }
+
+    public final void spawn(Location location, EntityType entityType) {
+        location.getWorld().spawnEntity(location, entityType);
     }
 }
