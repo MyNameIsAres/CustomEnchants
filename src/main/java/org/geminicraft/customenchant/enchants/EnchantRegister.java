@@ -5,6 +5,7 @@ import lombok.Getter;
 
 import org.geminicraft.customenchant.enchants.impl.ChildYeetEnchantment;
 import org.geminicraft.customenchant.enchants.impl.SummonEnchant;
+import org.geminicraft.customenchant.enchants.impl.TeleportEnchant;
 import org.geminicraft.customenchant.enchants.impl.ThunderStrikeEnchant;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.Valid;
@@ -18,12 +19,12 @@ public final class EnchantRegister {
     private static final EnchantRegister instance = new EnchantRegister();
 
     private final StrictList<SimpleEnchantment> simpleEnchantments = new StrictList<>();
-
-
+    
     private EnchantRegister() {
         add((SimpleEnchantment) ThunderStrikeEnchant.getInstance());
         add((SimpleEnchantment) ChildYeetEnchantment.getInstance());
         add((SimpleEnchantment) SummonEnchant.getInstance());
+        add((SimpleEnchantment) TeleportEnchant.getInstance());
     }
 
     public void add(SimpleEnchantment enchantment) {
@@ -37,14 +38,9 @@ public final class EnchantRegister {
             if (enchantment.getName().toLowerCase().equals(name.toLowerCase())) {
                 return enchantment;
             }
-
-
         }
 
-        Common.log(name + " I am a test name in EnchantRegister");
-
         return null;
-
     }
 
     public List<String> getEnchantmentNames() {
