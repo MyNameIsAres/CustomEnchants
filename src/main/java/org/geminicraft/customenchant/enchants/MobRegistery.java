@@ -5,6 +5,7 @@ import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.NPC;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.collection.StrictList;
 
@@ -25,7 +26,6 @@ public class MobRegistery {
         addMob(EntityType.COW);
     }
 
-    //
     public void addMob(EntityType entity) {
         if (entity.isSpawnable() || entity.isAlive()) {
             spawnableMobs.add(entity);
@@ -40,7 +40,7 @@ public class MobRegistery {
         return spawnableMobs;
     }
 
-    public final void spawn(Location location, EntityType entityType) {
-        location.getWorld().spawnEntity(location, entityType);
-    }
+//    public final void spawn(Location location, NPC entityType) {
+//        location.getWorld().spawnEntity(location, entityType);
 }
+//}
