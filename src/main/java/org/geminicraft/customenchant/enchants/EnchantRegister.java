@@ -3,10 +3,7 @@ package org.geminicraft.customenchant.enchants;
 
 import lombok.Getter;
 
-import org.geminicraft.customenchant.enchants.impl.ChildYeetEnchantment;
-import org.geminicraft.customenchant.enchants.impl.SummonEnchant;
-import org.geminicraft.customenchant.enchants.impl.TeleportEnchant;
-import org.geminicraft.customenchant.enchants.impl.ThunderStrikeEnchant;
+import org.geminicraft.customenchant.enchants.impl.*;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.Valid;
 import org.mineacademy.fo.collection.StrictList;
@@ -22,9 +19,10 @@ public final class EnchantRegister {
     
     private EnchantRegister() {
         add((SimpleEnchantment) ThunderStrikeEnchant.getInstance());
-        add((SimpleEnchantment) ChildYeetEnchantment.getInstance());
+        add((SimpleEnchantment) ChildYeetEnchant.getInstance());
         add((SimpleEnchantment) SummonEnchant.getInstance());
         add((SimpleEnchantment) TeleportEnchant.getInstance());
+        add((SimpleEnchantment) ExplosiveArrowsEnchant.getInstance());
     }
 
     public void add(SimpleEnchantment enchantment) {
