@@ -39,6 +39,7 @@ public class TeleportEnchant extends SimpleEnchantment {
 
         if (action == Action.RIGHT_CLICK_BLOCK && event.getHand() == EquipmentSlot.HAND) {
             Common.tell(player, "&2Teleport Anchor Set!");
+            
             block = player.getTargetBlock(null, 1);
             location = block.getLocation().add(0.5, 0, 0.5);
 
@@ -50,11 +51,12 @@ public class TeleportEnchant extends SimpleEnchantment {
                 Common.tell(player, "No location set!");
             } else {
                 location.setYaw(currentYaw);
-
                 player.teleport(location);
+
                 Common.tell(player, "&6The grant escape!");
                 player.playEffect(location, Effect.ENDER_SIGNAL, null);
                 CompSound.ENDERMAN_TELEPORT.play(player);
+
                 location = null;
             }
         }

@@ -40,6 +40,7 @@ public class MobRegistery {
         return spawnableMobs;
     }
 
+    // TODO bring back necessity of this method, or move it.
 //    public final void spawn(Location location, NPC entityType) {
 //        location.getWorld().spawnEntity(location, entityType);
 }
