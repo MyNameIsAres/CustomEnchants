@@ -8,12 +8,12 @@ import org.mineacademy.fo.Common;
 import org.mineacademy.fo.model.SimpleEnchantment;
 
 
-public class ChildYeetEnchantment extends SimpleEnchantment {
+public class ChildYeetEnchant extends SimpleEnchantment {
 
     @Getter
-    private static final Enchantment instance = new ChildYeetEnchantment();
+    private static final Enchantment instance = new ChildYeetEnchant();
 
-    private ChildYeetEnchantment() {
+    private ChildYeetEnchant() {
         super("Child Yeet", 5);
     }
 
