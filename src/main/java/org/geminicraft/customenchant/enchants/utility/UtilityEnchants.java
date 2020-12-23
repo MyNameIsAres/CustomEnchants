@@ -5,6 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.geminicraft.customenchant.betterenchants.BetterEnchants;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.model.SimpleEnchantment;
 
@@ -20,6 +21,10 @@ public class UtilityEnchants {
             if (e.getKey() instanceof SimpleEnchantment) {
                 final String lore = ((SimpleEnchantment) e.getKey()).getLore(e.getValue());
 
+                if (lore != null && !lore.isEmpty())
+                    customEnchants.add(Common.colorize("&r&7" + lore));
+            } else if (e.getKey() instanceof BetterEnchants) {
+                final String lore = ((BetterEnchants) e.getKey()).getLore(e.getValue());
                 if (lore != null && !lore.isEmpty())
                     customEnchants.add(Common.colorize("&r&7" + lore));
             }
@@ -51,8 +56,12 @@ public class UtilityEnchants {
             // Update the item stack
             item.setItemMeta(meta);
 
+            Common.log("This runs");
+
             return item;
         }
+
+        Common.log("Do we return null?");
 
         return null;
     }

@@ -20,16 +20,22 @@ public class ThunderStrikeEnchant extends SimpleEnchantment {
     private static final Enchantment instance = new ThunderStrikeEnchant();
 
     private ThunderStrikeEnchant() {
-        super("Thunder Strike", 3);
+        super("xx", 3);
     }
 
     protected boolean thunderCharged = false;
 
-
     @Override
-    public @NotNull EnchantmentTarget getItemTarget() {
+    public EnchantmentTarget getItemTarget() {
+        Common.log("Test");
         return EnchantmentTarget.ARMOR;
     }
+
+
+    //    @Override
+//    public @NotNull EnchantmentTarget getItemTarget() {
+//        return EnchantmentTarget.ARMOR;
+//    }
 
     @Override
     protected void onDamage(int level, LivingEntity damager, EntityDamageByEntityEvent event) {

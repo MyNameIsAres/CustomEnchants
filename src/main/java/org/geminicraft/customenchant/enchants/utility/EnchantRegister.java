@@ -1,4 +1,4 @@
-package org.geminicraft.customenchant.enchants;
+package org.geminicraft.customenchant.enchants.utility;
 
 
 import lombok.Getter;
@@ -12,9 +12,9 @@ import org.mineacademy.fo.model.SimpleEnchantment;
 import java.util.List;
 
 public final class EnchantRegister {
+
     @Getter
     private static final EnchantRegister instance = new EnchantRegister();
-
     private final StrictList<SimpleEnchantment> simpleEnchantments = new StrictList<>();
     
     private EnchantRegister() {
