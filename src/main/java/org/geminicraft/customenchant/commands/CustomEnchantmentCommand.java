@@ -2,7 +2,7 @@ package org.geminicraft.customenchant.commands;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.geminicraft.customenchant.enchants.EnchantRegister;
+import org.geminicraft.customenchant.enchants.utility.EnchantRegister;
 import org.geminicraft.customenchant.enchants.utility.UtilityEnchants;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.TabUtil;
@@ -30,15 +30,15 @@ public class CustomEnchantmentCommand extends SimpleCommand {
         final EnchantRegister enchantRegister = EnchantRegister.getInstance();
         final SimpleEnchantment enchantment = enchantRegister.findEnchantment(enchantName);
 
-        ItemStack testItem = player.getInventory().getItemInMainHand();
-        testItem.addEnchantment(new SimpleEnchant(enchantment).getEnchant(), 1);
-        UtilityEnchants.addEnchantmentLore(testItem);
+        ItemStack itemInMainHand = player.getInventory().getItemInMainHand();
 
-        // TODO: Create enchantment books, probably in a different command or class.
-        // TODO: Create better EnchantRegister
-        tell("&6You were given items with custom enchantments");
-
-
+        if (enchantRegister.findEnchantment(enchantName).getItemTarget().includes(itemInMainHand)) {
+            itemInMainHand.addEnchantment(new SimpleEnchant(enchantment).getEnchant(), 1);
+            UtilityEnchants.addEnchantmentLore(itemInMainHand);
+            tell("&6You were given items with custom enchantments");
+        } else {
+            tell("&6Enchantment can't be applied to this (/these) item(s)");
+        }
     }
 
     @Override
